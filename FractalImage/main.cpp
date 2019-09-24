@@ -4,10 +4,9 @@
 #include "C:\Users\Amir\Desktop\Gtt\FractalImage\FractalImage\include\Bitmap.h"
 #include "Maldelbrot.h"
 #include <memory>
-#include <math.h>
 #include "ZoomList.h"
+#include "FractalCreator.h"
 
-#include <cstdint>
 
 using namespace std;
 using namespace caveofprogramming;
@@ -25,9 +24,6 @@ int main()
     //Bitmap mtmp1(800,800);
     Bitmap btmp1(Width,Height);
 
-    double xFractal;
-    double yFractal;
-
 
     ZoomList zoolist(Width,Height);
     zoolist.add(Zoom(Width/2,Height/2,4.0/Width));
@@ -37,30 +33,37 @@ int main()
     unique_ptr<int[]> histogram(new int[Maldelbrot::Max_Iter]{0});
     unique_ptr<int[]> fractal(new int [Width*Height]{0});
 
-    for (int i=0; i<Width; i++){
+
+    //int x[3] = {1,2,3};
+    //int x{5};
+    FractalCreator fractalcreator(Width,Height);
+    //fractalcreator.Test(histogram.get());
+    //cout << "This is my Test result:" << histogram[0]  <<endl;
+    fractalcreator.CalculateIteration(histogram.get(),fractal.get(),zoolist);
+
+    /*for (int i=0;i<Maldelbrot::Max_Iter;i++){
+        cout << histogram[i] << ", ";
+    }*/
+
+
+  /*  for (int i=0; i<Width; i++){
             for (int j=0;j<Height;j++){
 
-                /*xFractal = Scaling(i-200,Height);
-                yFractal = Scaling(j,Height);*/
-
                 pair<double,double> Frc =zoolist.doZoom(i,j);
-                xFractal = Frc.first;
-                yFractal = Frc.second;
 
-
-                int iteration = Maldelbrot::getIterations(xFractal,yFractal);
+                int iteration = Maldelbrot::getIterations(Frc.first,Frc.second);
 
                 fractal[j*Width+i]=iteration;
 
                 if (iteration != Maldelbrot::Max_Iter){
                 histogram[iteration]++;
                 }
-
-
             }
-    }
+    }*/
 
-    int total = 0;
+    fractalcreator.drawFractal(histogram.get(),fractal.get(),btmp1);
+
+    /*int total = 0;
     for (int i=0;i<Maldelbrot::Max_Iter;i++){
         total += histogram[i];
     }
@@ -82,16 +85,18 @@ int main()
                 for (int i=0; i <=iteration;i++){
                     hue += ((double)histogram[i])/total;
                 }
-                red = pow(255,hue);
+                blue = pow(255,hue);
                 }
 
                 btmp1.setPixel(i,j,red,green,blue);
             }
-        }
+        } */
 
 
+        fractalcreator.writeBitmap(btmp1 ,"test7.bmp");
+        /*btmp1.write("test7.bmp");
+        cout << "Done!" << endl;*/
 
-    btmp1.write("test6.bmp");
-    cout << "Done!" << endl;
+
     return 0;
 }

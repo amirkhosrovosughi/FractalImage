@@ -15,7 +15,7 @@ void ZoomList::add(const Zoom& zoom){
 
     m_scale  *= zoom.scale;
 
-    cout << x_Center << ", " << y_Center << ", " << m_scale << endl;
+    //cout << x_Center << ", " << y_Center << ", " << m_scale << endl;
 }
 
 

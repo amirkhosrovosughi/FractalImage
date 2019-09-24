@@ -1,14 +1,13 @@
 # depslib dependency file v1.0
-1569352707 source:c:\users\amir\desktop\gtt\fractalimage\fractalimage\main.cpp
+1569360401 source:c:\users\amir\desktop\gtt\fractalimage\fractalimage\main.cpp
 	<iostream>
 	"BitmapFileHeader.h"
 	"BitmapInfoHeader.h"
 	"C:\Users\Amir\Desktop\Gtt\FractalImage\FractalImage\include\Bitmap.h"
 	"Maldelbrot.h"
 	<memory>
-	<math.h>
 	"ZoomList.h"
-	<cstdint>
+	"FractalCreator.h"
 
 1569284695 c:\users\amir\desktop\gtt\fractalimage\fractalimage\bitmapfileheader.h
 	<cstdint>
@@ -36,12 +35,25 @@
 
 1569348570 c:\users\amir\desktop\gtt\fractalimage\fractalimage\include\zoom.h
 
-1569351118 source:c:\users\amir\desktop\gtt\fractalimage\fractalimage\src\zoomlist.cpp
+1569353325 source:c:\users\amir\desktop\gtt\fractalimage\fractalimage\src\zoomlist.cpp
 	"ZoomList.h"
 
-1569350715 c:\users\amir\desktop\gtt\fractalimage\fractalimage\include\zoomlist.h
-	<iostream>
+1569353325 c:\users\amir\desktop\gtt\fractalimage\fractalimage\include\zoomlist.h
 	<Zoom.h>
 	<vector>
 	<utility>
+
+1569360312 source:c:\users\amir\desktop\gtt\fractalimage\fractalimage\src\fractalcreator.cpp
+	"FractalCreator.h"
+
+1569360312 c:\users\amir\desktop\gtt\fractalimage\fractalimage\include\fractalcreator.h
+	<iostream>
+	<string>
+	"ZoomList.h"
+	"Zoom.h"
+	<utility>
+	"Maldelbrot.h"
+	"Bitmap.h"
+	<cstdint>
+	<math.h>
 
