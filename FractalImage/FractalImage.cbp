@@ -42,8 +42,13 @@
 			<Option target="&lt;{~None~}&gt;" />
 		</Unit>
 		<Unit filename="include/Bitmap.h" />
+		<Unit filename="include/Maldelbrot.h" />
+		<Unit filename="include/Zoom.h" />
+		<Unit filename="include/ZoomList.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Bitmap.cpp" />
+		<Unit filename="src/Maldelbrot.cpp" />
+		<Unit filename="src/ZoomList.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
