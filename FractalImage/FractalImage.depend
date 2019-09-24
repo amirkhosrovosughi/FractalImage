@@ -1,17 +1,17 @@
 # depslib dependency file v1.0
-1569283177 source:c:\users\amir\desktop\gtt\fractalimage\fractalimage\main.cpp
+1569285207 source:c:\users\amir\desktop\gtt\fractalimage\fractalimage\main.cpp
 	<iostream>
 	"BitmapFileHeader.h"
 	"BitmapInfoHeader.h"
 	"C:\Users\Amir\Desktop\Gtt\FractalImage\FractalImage\include\Bitmap.h"
 
-1569278293 c:\users\amir\desktop\gtt\fractalimage\fractalimage\bitmapfileheader.h
+1569284695 c:\users\amir\desktop\gtt\fractalimage\fractalimage\bitmapfileheader.h
 	<cstdint>
 
-1569283436 c:\users\amir\desktop\gtt\fractalimage\fractalimage\bitmapinfoheader.h
+1569285207 c:\users\amir\desktop\gtt\fractalimage\fractalimage\bitmapinfoheader.h
 	<cstdint>
 
-1569282668 source:c:\users\amir\desktop\gtt\fractalimage\fractalimage\src\bitmap.cpp
+1569286401 source:c:\users\amir\desktop\gtt\fractalimage\fractalimage\src\bitmap.cpp
 	"Bitmap.h"
 	<fstream>
 	"C:\Users\Amir\Desktop\Gtt\FractalImage\FractalImage\BitmapFileHeader.h"
