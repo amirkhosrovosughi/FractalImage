@@ -10,6 +10,9 @@
 #include "Bitmap.h"
 #include <cstdint>
 #include <math.h>
+#include "RGB.h"
+#include <vector>
+#include <assert.h>
 
 using namespace std;
 
@@ -23,21 +26,31 @@ class FractalCreator
     int Width{0};
     int Height{0};
 
+    unique_ptr<int[]> histogram2;
+    unique_ptr<int[]> fractal2;
+
+    Bitmap btmp1;
+
+    ZoomList zoolist;
+    vector<int> ranges;
+    vector<RGB> colors;
+
+    vector<int> m_rangeTotal;
+
+    bool m_bGotFirstRagne{false};
+
     public:
         FractalCreator(int Width, int Height);
         virtual ~FractalCreator();
-
-        void CalculateIteration( int histogram[], int fractal[],  ZoomList &zoolist);
-        void drawFractal(int histogram[], int fractal[],  Bitmap &btmp1);
+        void run(string name);
+        void CalculateIteration();
+        void drawFractal();
         void addZoom(const Zoom& zoom);
-        void writeBitmap(Bitmap &btmp1 ,string name);
+        void writeBitmap(string name);
+        void addRange(double EndRange, const RGB rgb);
+        void CalculateRangeTotal();
+        int getRange(int iterations) const;
 
-        /*void Test(int x[]){
-            //(*x)[0] = 10;
-            x[0]=6;
-            x[1]=7;
-            x[2]=8;
-        }*/
 };
 
 
